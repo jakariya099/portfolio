@@ -1,0 +1,101 @@
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #080b14;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(16, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 243, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 243, 255, 0.5);
+  box-shadow: 0 10px 40px -10px rgba(0, 243, 255, 0.3);
+}
+
+/* Neon Text Glow */
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.6);
+}
+.text-glow-purple {
+  text-shadow: 0 0 12px rgba(157, 78, 221, 0.6);
+}
+
+/* Custom Glow Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080b14;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00f3ff, #9d4edd);
+  border-radius: 4px;
+}
+
+/* Custom Cursor Follower */
+#cursor-dot,
+#cursor-blur {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  transition:
+    transform 0.1s ease,
+    width 0.2s ease,
+    height 0.2s ease;
+}
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00f3ff;
+  box-shadow: 0 0 10px #00f3ff;
+}
+#cursor-blur {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(157, 78, 221, 0.6);
+  background: rgba(157, 78, 221, 0.05);
+  transition: all 0.15s ease-out;
+}
+
+/* 3D Tilt Card Base */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.1s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Reveal Animation Classes */
+.reveal-node {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-node.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scanline Overlay Effect for Cyberpunk Vibe */
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
+  background-size: 100% 4px;
+}
